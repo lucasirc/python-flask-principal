@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Login </title>
+	</head>
+	<body>
+		<ul>
+			<li><a href="{{ url_for('index') }}"> Home</a></li>
+			<li><a href="{{ url_for('contact') }}"> Contact</a></li>
+			<li><a href="{{ url_for('admin') }}"> admin</a></li>
+		</ul>
+
+		{% block  content %}{% endblock %}
+	</body>
+</html>
