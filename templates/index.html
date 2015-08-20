@@ -2,5 +2,9 @@
 
 {% block content %}
 
-oi
+<form action="{{ url_for('login') }}" method="POST">
+	Username: <input type="text" name="username"/></br>
+	Password: <input type="password" name="password"/></br>
+	<button>Sign in</button>
+</form>
 {% endblock %}

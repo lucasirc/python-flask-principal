@@ -4,10 +4,16 @@
 		<title> Login </title>
 	</head>
 	<body>
+		{% if current_user.is_authenticated() %}
+		  Hi {{ current_user.id }}!
+		{% endif %}
 		<ul>
 			<li><a href="{{ url_for('index') }}"> Home</a></li>
-			<li><a href="{{ url_for('contact') }}"> Contact</a></li>
-			<li><a href="{{ url_for('admin') }}"> admin</a></li>
+			<li><a href="{{ url_for('contact') }}">Contact</a></li>
+			<li><a href="{{ url_for('admin') }}">Admin</a></li>
+			{% if current_user.is_authenticated() %}
+			<li><a href="{{ url_for('logout') }}">Logout</a></li>
+			{% endif %}
 		</ul>
 
 		{% block  content %}{% endblock %}
